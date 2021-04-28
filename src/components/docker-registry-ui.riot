@@ -15,14 +15,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <docker-registry-ui>
-  <header>
-    <material-navbar>
-      <div class="logo">Docker Registry UI</div>
-      <search-bar on-search="{ onSearch }"></search-bar>
-      <dialogs-menu if="{props.singleRegistry !== 'true'}" on-notify="{ notifySnackbar }"
-        on-server-change="{ onServerChange }"></dialogs-menu>
-    </material-navbar>
-  </header>
   <main>
     <router base="#!">
       <route path="{baseRoute}">
@@ -48,19 +40,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
       opened="{ state.authenticationDialogOpened }"></registry-authentication>
     <material-snackbar message="{ state.snackbarMessage }" is-error="{ state.snackbarIsError }"></material-snackbar>
   </main>
-  <footer>
-    <material-footer>
-      <a slot="logo" href="https://joxit.github.io/docker-registry-ui/">Docker Registry UI { version }</a>
-      <ul slot="link-list">
-        <li>
-          <a href="https://github.com/Joxit/docker-registry-ui">Contribute on GitHub</a>
-        </li>
-        <li>
-          <a href="https://github.com/Joxit/docker-registry-ui/blob/main/LICENSE">Privacy &amp; Terms</a>
-        </li>
-      </ul>
-    </material-footer>
-  </footer>
   <script>
     import {
       version
